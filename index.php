@@ -16,6 +16,7 @@ $napalmauth->init();
 $napalmdata = new NapalmData();
 
 $status = $napalmauth->user_process();
+//wtf is status for ? *drunk*
 
 switch($napalmauth->auth_status()){
     case 0:
