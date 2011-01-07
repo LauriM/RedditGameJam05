@@ -1,8 +1,8 @@
 -- MySQL dump 10.11
 --
--- Host: localhost    Database: napalmauth
+-- Host: localhost    Database: reddit
 -- ------------------------------------------------------
--- Server version	5.0.51a-24+lenny4
+-- Server version	5.0.51a-24+lenny2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,6 +16,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Current Database: `reddit`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `reddit` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `reddit`;
+
+--
 -- Table structure for table `data`
 --
 
@@ -23,12 +31,37 @@ DROP TABLE IF EXISTS `data`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `data` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL auto_increment,
   `owner` varchar(50) NOT NULL,
   `variable` varchar(50) NOT NULL,
-  `value` varchar(500) NOT NULL
+  `value` varchar(500) NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `feed`
+--
+
+DROP TABLE IF EXISTS `feed`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `feed` (
+  `ID` int(11) NOT NULL auto_increment,
+  `target` varchar(50) NOT NULL,
+  `message` varchar(250) NOT NULL,
+  PRIMARY KEY  (`ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `feed`
+--
+
+LOCK TABLES `feed` WRITE;
+/*!40000 ALTER TABLE `feed` DISABLE KEYS */;
+/*!40000 ALTER TABLE `feed` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `users`
@@ -42,10 +75,8 @@ CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
-
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
@@ -55,4 +86,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-11-24  7:52:09
+-- Dump completed on 2011-01-07 23:51:39
