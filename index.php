@@ -1,8 +1,6 @@
 <?php
 session_start();
 ?>
-<html>
-<body>
 <?php
 include("config.php");
 include("system/database.php");
@@ -57,5 +55,3 @@ switch($napalmauth->auth_status()){
 
 $napalmauth->debug();
 ?>
-</body>
-</html>

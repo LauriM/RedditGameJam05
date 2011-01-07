@@ -1,26 +1,21 @@
+<html>
+<head>
+    <title>RedditGamJam05 game that is somehow related to love!</title>
+</head>
+<body>
 <?php
 $status = $napalmauth->user_auth_status();
 $username = $napalmauth->user_name();
-
-$lasthit = $napalmdata->getdata($username,"lasthit");
-$napalmdata->setdata($username,"lasthit",time());
 ?>
-<h1>PRIVATE REALM</h1>
+<h1>RedditGamJam05 game that is somehow related to love!</h1>
 
 <?php
 echo("<p>Hi $username!<p/>");
-
-$diff = time() - $lasthit;
-
-echo("<p>Last hit $diff secs ago</p>");
-
 $napalmauth->show_logout();
-
 ?>
-<hr/>
-<?php
-$napalmauth->show_changepw();
 
+<?php
+//maybe if user changes password, check if in correct place in future
 switch($napalmauth->auth_status()){
     case 5:
         echo("Password changed!");
@@ -30,4 +25,5 @@ switch($napalmauth->auth_status()){
         break;
 }
 ?>
-<hr/>
+</body>
+</html>
