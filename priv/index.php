@@ -13,8 +13,13 @@ $username = $napalmauth->user_name();
 echo("<p>Hi $username!<p/>");
 $napalmauth->show_logout();
 ?>
+<hr/>
 
 <?php
+
+//ENGINE, THE SHIT HAPPENS HERE
+include("priv/engine.php");
+
 //maybe if user changes password, check if in correct place in future
 switch($napalmauth->auth_status()){
     case 5:
