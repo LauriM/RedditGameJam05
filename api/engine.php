@@ -3,5 +3,12 @@ if($auth_ok == 0){
     die("Auth error");
 }
 
-echo("Apiloginok\n");
+$action = $_GET['action'];
+
+switch($action){
+    case "live":
+        include("engine/live.php");
+    default:
+        echo("Apiloginok\n");
+}
 ?>

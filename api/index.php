@@ -28,6 +28,4 @@ if($status == 1){
 }else{
     echo("autherror");
 }
-
-$napalmauth->debug();
 ?>

@@ -1,6 +1,16 @@
 <html>
 <head>
     <title>RedditGamJam05 game that is somehow related to love!</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            dump = setInterval("updatefeed()",1000);
+        });
+
+        function updatefeed(){
+            $('#livefeed').load('api/index.php?action=live');
+        }
+    </script>
 </head>
 <body>
 <?php
