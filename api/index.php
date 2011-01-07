@@ -19,7 +19,7 @@ $napalmauth->user_process();
 $status = $napalmauth->user_process();
 
 echo $status;
-if($status = 1){
+if($status !== 1){
     $status = $napalmauth->api_auth();
 }
 if($status == 1){
