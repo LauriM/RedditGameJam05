@@ -11,6 +11,7 @@ $username = $napalmauth->user_name();
 
 <?php
 echo("<p>Hi $username!<p/>");
+echo("<p><a href='index.php'>Dashboard</a></p>");
 $napalmauth->show_logout();
 ?>
 <hr/>
