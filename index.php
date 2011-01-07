@@ -13,6 +13,7 @@ include('system/recaptchalib.php');
 
 $napalmauth = new NapalmAuth();
 $napalmauth->init();
+//$napalmauth->recaptha_enable("$recaptha_key1","$recaptha_key2");
 
 $napalmdata = new NapalmData();
 

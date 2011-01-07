@@ -73,8 +73,10 @@ class NapalmAuth{
 
             $username = secure($_POST['username']);
             $password = $_POST['password'];
-
-			$resp = recaptcha_check_answer ($this->recaptha_private,$_SERVER["REMOTE_ADDR"],$_POST["recaptcha_challenge_field"],$_POST["recaptcha_response_field"]);
+            
+            if($this->recaptha_enable == true){
+                $resp = recaptcha_check_answer ($this->recaptha_private,$_SERVER["REMOTE_ADDR"],$_POST["recaptcha_challenge_field"],$_POST["recaptcha_response_field"]);
+            }
 
 			if(!$resp->is_valid AND $this->recaptha_enable == true){
 				$this->user_auth_done = 7;

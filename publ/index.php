@@ -1,4 +1,4 @@
-<h1>PUBLIC ReALM!</h1>
+<h1>RedditGameJam05 game that is somehow related to love!</h1>
 
 <?php
 switch($status){
