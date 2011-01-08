@@ -24,24 +24,31 @@ echo("<table border='1'>");
 for($y = 0;$y < $world_width;$y++){
     echo("<tr>");
     for($x = 0;$x < $world_height;$x++){
-        echo("<td>");
 
             //get tile
             $hit = false;
             for($i = 0;$i < $count_world;$i++){
                 if($x == mysql_result($result_world,$i,"posx") AND $y == mysql_result($result_world,$i,"posy")){
                     $tile = mysql_result($result_world,$i,"tile");
-                    echo("<img src='img/tile/tile$tile.bmp'/>");
+                    echo("<td background='img/tile/tile$tile.bmp' width='21' height='21'>"); 
                     $hit = true;
                 }
+            }
+
+            $tilefull = false;
+            if($x == $user_x AND $y == $user_y){
+                $tilefull = 1;
+                echo("<img src='img/tile/tile0.bmp' border='0'/>");
             }
 
             //get players
             for($i = 0;$i < $count_players;$i++){
                 if($x == mysql_result($result_players,$i,"posx") AND $y == mysql_result($result_players,$i,"posy")){
                     $player_name = mysql_result($result_players,$i,"username");
-                    echo("<b>$player_name</b>");
-                    $hit = true;
+                    if($tilefull == false){
+                        echo("<img src='img/tile/tile0.bmp'/>");
+                        $tilefull = true;
+                    }
                 }
             }
 
@@ -49,9 +56,6 @@ for($y = 0;$y < $world_width;$y++){
                 echo("<img src='img/tile/tile0.bmp'/>"); 
             }
 
-            if($x == $user_x AND $y == $user_y){
-                echo("O");
-            }
         echo("</td>");
     }
     echo("</tr>");

@@ -2,6 +2,10 @@ body{
     text-align: center;
 }
 
+img{
+    border: 0px;
+}
+
 .container{
     margin: 0 auto;
     width: 600px;
