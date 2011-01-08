@@ -7,7 +7,20 @@
             dump = setInterval("updatefeed()",1000);
 
             $('#movew').click(function(){
-                 $.get('api/index.php?action=move', {dir: "w"} )
+                $.get('api/index.php?action=move', {dir: "w"} )
+                $('#worldview').load('api/index.php?action=worldview');
+            });
+
+            $('#moves').click(function(){
+                $.get('api/index.php?action=move', {dir: "s"} )
+                $('#worldview').load('api/index.php?action=worldview');
+            });
+            $('#movee').click(function(){
+                $.get('api/index.php?action=move', {dir: "e"} )
+                $('#worldview').load('api/index.php?action=worldview');
+            });
+            $('#moven').click(function(){
+                $.get('api/index.php?action=move', {dir: "n"} )
                 $('#worldview').load('api/index.php?action=worldview');
             });
         });

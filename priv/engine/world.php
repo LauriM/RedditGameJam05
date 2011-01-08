@@ -21,6 +21,33 @@ if($user_world == ""){
 <div id="worldview">
 </div>
 
-<div class="controls">
-    <a id="movew">w</a>
-</div>
+<table border="1">
+    <tr>
+        <td>
+        </td>
+        <td>
+            <a id="moven">N</a>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a id="movew">w</a>
+        </td>
+        <td>
+        </td>
+        <td>
+            <a id="movee">e</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+            <a id="moves">s</a>
+        </td>
+        <td>
+        </td>
+    </tr>
+</table>
