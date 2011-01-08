@@ -6,3 +6,7 @@
 |-> Target of the message, example <username> is for one user. [global] for global message etc. {arealocationblingblingorsomethingidkifIevenusethistag}
 -message
 |-> the message? 
+-owner
+|->derp derp
+-unixtime
+|->OD_D_D_O_OD_O
