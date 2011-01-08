@@ -14,11 +14,18 @@ if($count == 1){
     die("Error on user profile!");
 }
 
+//UPDATE THE OBJECTS AND GAMESTATE
+//needs $user_world to work so not on top of the file
+include("gamestate.php");
+
 $result_world = query("SELECT * FROM world WHERE world = '$user_world'");
 $count_world  = mysql_num_rows($result_world);
 
 $result_players = query("SELECT * FROM users WHERE world = '$user_world'");
 $count_players  = mysql_num_rows($result_players);
+
+$result_objects = query("SELECT * FROM objects WHERE world = '$user_world'");
+$count_objects  = mysql_num_rows($result_objects);
 
 echo("<table border='1'>");
 for($y = 0;$y < $world_width;$y++){
@@ -38,15 +45,27 @@ for($y = 0;$y < $world_width;$y++){
             $tilefull = false;
             if($x == $user_x AND $y == $user_y){
                 $tilefull = 1;
-                echo("<img src='img/tile/tile0.bmp' border='0'/>");
+                echo("<img src='img/player.bmp' border='0'/>");
             }
+
+            //objects
+            for($i = 0;$i < $count_objects;$i++){
+                if($x == mysql_result($result_objects,$i,"posx") AND $y == mysql_result($result_objects,$i,"posy")){
+                    $type = mysql_result($result_objects,$i,"type");
+                    if($tilefull == false){
+                        echo("<img src='img/obj/obj$type.bmp'/>");
+                        $tilefull = true;
+                    }
+                }
+            }
+
 
             //get players
             for($i = 0;$i < $count_players;$i++){
                 if($x == mysql_result($result_players,$i,"posx") AND $y == mysql_result($result_players,$i,"posy")){
                     $player_name = mysql_result($result_players,$i,"username");
                     if($tilefull == false){
-                        echo("<img src='img/tile/tile0.bmp'/>");
+                        echo("<img src='img/tile/tile0.bmp' alt='$player_name'/>");
                         $tilefull = true;
                     }
                 }
