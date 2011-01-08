@@ -26,7 +26,7 @@ if($auth == 1){
             $id = secure($_GET['id']);
 
             $result = query("SELECT * FROM world WHERE world = '$user_world' AND posx = '$user_x' AND posy = '$user_y'");
-            if(mysql_num_rows($result == 1)){
+            if(mysql_num_rows($result) == 1){
                 query("UPDATE world SET tile = $id WHERE world = '$user_world' AND posx = '$user_x' AND posy = '$user_y'",1);
             }else{
                 query("INSERT INTO world(tile,world,posx,posy) VALUES('$id','$user_world','$user_x','$user_y')");
