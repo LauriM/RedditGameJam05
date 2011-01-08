@@ -22,6 +22,7 @@ echo $status;
 if($status !== 1){
     $status = $napalmauth->api_auth();
 }
+
 if($status == 1){
     $auth_ok = true;
     include("engine.php");
