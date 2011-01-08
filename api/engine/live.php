@@ -1,5 +1,5 @@
 <?php
-$result = query("SELECT * FROM feed");
+$result = query("SELECT * FROM feed WHERE target = '<$username>' OR target = '[global]'");
 $count  = mysql_num_rows($result);
 
 for($i = 0;$i < $count;$i++){
