@@ -56,15 +56,32 @@ if($y > $world_height - 1){
 }
 
 $result = query("SELECT * FROM world WHERE world = '$user_world' AND posx = '$x' AND posy='$y' AND clip='1'");
+
 if(mysql_num_rows($result) == 0){
     query("UPDATE users SET posx = '$x', posy = '$y' WHERE username = '$username'");
+    $moved = true; 
 }else{
-echo($napalmdata->getdata($username,"editor"));
+    echo($napalmdata->getdata($username,"editor"));
+
     if($napalmdata->getdata($username,"editor") == 1){
         query("UPDATE users SET posx = '$x', posy = '$y' WHERE username = '$username'");
         query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Clip alert!','$time')");
+        $moved = true; 
     }else{
         query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Can\'t move there!','$time')");
+    }
+}
+
+if($moved == true){
+    //check for objects
+    $result = query("SELECT * FROM objects WHERE posx = '$x' AND posy = '$y' AND world = '$user_world'");
+    $count  = mysql_num_rows($result);
+
+    if($count > 0){
+        query("DELETE FROM objects WHERE posx = '$x' AND posy = '$y' AND world = '$user_world'",1); 
+
+        $points = $napalmdata->getdata($username,"points");
+        $napalmdata->setdata($username,"points",$points+1);
     }
 }
 
