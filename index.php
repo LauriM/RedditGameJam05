@@ -54,5 +54,4 @@ switch($napalmauth->auth_status()){
 		break;
 }
 
-$napalmauth->debug();
 ?>
