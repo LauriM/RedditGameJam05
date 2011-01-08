@@ -17,6 +17,9 @@ if($count == 1){
 $result_world = query("SELECT * FROM world WHERE world = '$user_world'");
 $count_world  = mysql_num_rows($result_world);
 
+$result_players = query("SELECT * FROM users WHERE world = '$user_world'");
+$count_players  = mysql_num_rows($result_players);
+
 echo("<table border='1'>");
 for($y = 0;$y < $world_width;$y++){
     echo("<tr>");
@@ -29,6 +32,15 @@ for($y = 0;$y < $world_width;$y++){
                 if($x == mysql_result($result_world,$i,"posx") AND $y == mysql_result($result_world,$i,"posy")){
                     $tile = mysql_result($result_world,$i,"tile");
                     echo("<b>$tile</b>");
+                    $hit = true;
+                }
+            }
+
+            //get players
+            for($i = 0;$i < $count_players;$i++){
+                if($x == mysql_result($result_players,$i,"posx") AND $y == mysql_result($result_players,$i,"posy")){
+                    $player_name = mysql_result($result_players,$i,"username");
+                    echo("<b>$player_name</b>");
                     $hit = true;
                 }
             }
