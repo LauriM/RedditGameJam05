@@ -1,4 +1,8 @@
 <?php
+//TODO: move to data table
+$world_width = 10;
+$world_height = 10;
+
 $dir = $_GET['dir'];
 $time = time();
 
@@ -32,6 +36,24 @@ switch("$dir"){
         break;
 }
 
+if($x < 0){
+    $x = 0;
+    query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Clip alert!','$time')");
+}
+if($y < 0){
+    $y = 0;
+    query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Clip alert!','$time')");
+}
+
+if($x > $world_width){
+    $y = $world_width;
+    query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Clip alert!','$time')");
+}
+
+if($y > $world_height){
+    $y = $world_height;
+    query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Clip alert!','$time')");
+}
 
 $result = query("SELECT * FROM world WHERE world = '$user_world' AND posx = '$x' AND posy='$y' AND clip='1'");
 if(mysql_num_rows($result) == 0){

@@ -20,8 +20,6 @@ if($user_world == ""){
 }
 ?>
 
-<div id="worldview">
-</div>
 
 <div class="controls">
 <table border="1">
@@ -71,3 +69,6 @@ if($editor == 1){
 <?php
 }
 ?>
+
+<div id="worldview">
+</div>
