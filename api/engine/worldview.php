@@ -31,7 +31,7 @@ for($y = 0;$y < $world_width;$y++){
             for($i = 0;$i < $count_world;$i++){
                 if($x == mysql_result($result_world,$i,"posx") AND $y == mysql_result($result_world,$i,"posy")){
                     $tile = mysql_result($result_world,$i,"tile");
-                    echo("<b>$tile</b>");
+                    echo("<img src='img/tile/tile$tile.bmp'/>");
                     $hit = true;
                 }
             }
@@ -46,7 +46,7 @@ for($y = 0;$y < $world_width;$y++){
             }
 
             if($hit == false){
-                echo("null"); 
+                echo("<img src='img/tile/tile0.bmp'/>"); 
             }
 
             if($x == $user_x AND $y == $user_y){

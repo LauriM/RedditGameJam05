@@ -1,0 +1,9 @@
+body{
+    text-align: center;
+}
+
+.container{
+    margin: 0 auto;
+    width: 600px;
+    text-align: left;
+}

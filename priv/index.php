@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>RedditGamJam05 game that is somehow related to love!</title>
+    <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -41,6 +42,7 @@
     </script>
 </head>
 <body>
+<div class="container">
 <?php
 $status = $napalmauth->user_auth_status();
 $username = $napalmauth->user_name();
@@ -69,5 +71,6 @@ switch($napalmauth->auth_status()){
         break;
 }
 ?>
+</div><!-- container -->
 </body>
 </html>
