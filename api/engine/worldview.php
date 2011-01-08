@@ -80,6 +80,8 @@ for($y = 0;$y < $world_width;$y++){
     echo("</tr>");
 }
 echo("</table>");
+$points = $napalmdata->getdata($username,"points");
+echo("<p><b>Points: $points</b></p>");
 echo("<hr>");
 
 $result = query("SELECT * FROM feed WHERE target = '<$username>' OR target = '[global]'");
