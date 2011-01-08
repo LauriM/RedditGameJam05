@@ -49,19 +49,12 @@ SET character_set_client = utf8;
 CREATE TABLE `feed` (
   `ID` int(11) NOT NULL auto_increment,
   `target` varchar(50) NOT NULL,
+  `owner` varchar(25) NOT NULL,
   `message` varchar(250) NOT NULL,
+  `unixtime` int(11) NOT NULL,
   PRIMARY KEY  (`ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
-
---
--- Dumping data for table `feed`
---
-
-LOCK TABLES `feed` WRITE;
-/*!40000 ALTER TABLE `feed` DISABLE KEYS */;
-/*!40000 ALTER TABLE `feed` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `users`
@@ -78,6 +71,8 @@ CREATE TABLE `users` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
@@ -86,4 +81,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-01-07 23:51:39
+-- Dump completed on 2011-01-08  0:35:50
