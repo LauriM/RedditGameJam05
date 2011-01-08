@@ -8,6 +8,7 @@ $action = $_GET['action'];
 switch($action){
     case "live":
         include("engine/live.php");
+        break;
     default:
         echo("Apiloginok\n");
 }
