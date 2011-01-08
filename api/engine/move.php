@@ -45,13 +45,13 @@ if($y < 0){
     query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Can\'t move there!','$time')");
 }
 
-if($x > $world_width){
-    $y = $world_width;
+if($x > $world_width - 1){
+    $x = $world_width - 1;
     query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Can\'t move there!','$time')");
 }
 
-if($y > $world_height){
-    $y = $world_height;
+if($y > $world_height - 1){
+    $y = $world_height - 1;
     query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Can\'t move there!','$time')");
 }
 
