@@ -20,3 +20,7 @@ if($user_world == ""){
 
 <div id="worldview">
 </div>
+
+<div class="controls">
+    <a id="movew">w</a>
+</div>

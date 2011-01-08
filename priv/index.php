@@ -5,6 +5,11 @@
     <script type="text/javascript">
         $(document).ready(function(){
             dump = setInterval("updatefeed()",1000);
+
+            $('#movew').click(function(){
+                 $.get('api/index.php?action=move', {dir: "w"} )
+                $('#worldview').load('api/index.php?action=worldview');
+            });
         });
 
         function updatefeed(){

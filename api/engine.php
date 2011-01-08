@@ -12,6 +12,9 @@ switch($action){
     case "worldview":
         include("engine/worldview.php");
         break;
+    case "move":
+        include("engine/move.php");
+        break;
     default:
         echo("Apiloginok\n");
 }
