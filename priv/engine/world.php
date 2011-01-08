@@ -2,6 +2,8 @@
 $result = query("SELECT * FROM users WHERE username = '$username';"); 
 $count  = mysql_num_rows($result);
 
+$editor = $napalmdata->getdata("$username","editor");
+
 if($count == 1){
     $user_x     = mysql_result($result,0,"posx");
     $user_y     = mysql_result($result,0,"posy");
@@ -21,6 +23,7 @@ if($user_world == ""){
 <div id="worldview">
 </div>
 
+<div class="controls">
 <table border="1">
     <tr>
         <td>
@@ -51,3 +54,15 @@ if($user_world == ""){
         </td>
     </tr>
 </table>
+</div>
+
+<?php
+if($editor == 1){
+?>
+<div class="editor">
+    <p><a id="editorclipon">Clip on<a/></p>
+    <p><a id="editorclipoff">Clip off<a/></p>
+</div>
+<?php
+}
+?>

@@ -37,7 +37,13 @@ $result = query("SELECT * FROM world WHERE world = '$user_world' AND posx = '$x'
 if(mysql_num_rows($result) == 0){
     query("UPDATE users SET posx = '$x', posy = '$y' WHERE username = '$username'");
 }else{
-    query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Can\'t move there!','$time')");
+echo($napalmdata->getdata($username,"editor"));
+    if($napalmdata->getdata($username,"editor") == 1){
+        query("UPDATE users SET posx = '$x', posy = '$y' WHERE username = '$username'");
+        query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Clip alert!','$time')");
+    }else{
+        query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Can\'t move there!','$time')");
+    }
 }
 
 ?>

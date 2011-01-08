@@ -13,6 +13,9 @@ switch($action){
     case "move":
         include("engine/move.php");
         break;
+    case "editor":
+        include("engine/editor.php");
+        break;
     default:
         echo("Apiloginok\n");
 }

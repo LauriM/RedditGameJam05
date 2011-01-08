@@ -7,6 +7,7 @@ include("../system/functions.php");
 include("../system/napalmauth.class.php");
 include("../system/napalmdata.class.php");
 
+$napalmdata = new NapalmData();
 
 $napalmauth = new NapalmAuth();
 $napalmauth->init();

@@ -23,6 +23,15 @@
                 $.get('api/index.php?action=move', {dir: "n"} )
                 $('#worldview').load('api/index.php?action=worldview');
             });
+
+
+            $('#editorclipon').click(function(){
+                $.get('api/index.php?action=editor', {cmd: "clipon"} )
+            });
+
+            $('#editorclipoff').click(function(){
+                $.get('api/index.php?action=editor', {cmd: "clipoff"} )
+            });
         });
 
         function updatefeed(){
