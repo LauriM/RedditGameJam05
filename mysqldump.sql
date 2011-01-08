@@ -53,7 +53,7 @@ CREATE TABLE `feed` (
   `message` varchar(250) NOT NULL,
   `unixtime` int(11) NOT NULL,
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -67,10 +67,32 @@ CREATE TABLE `users` (
   `ID` int(11) NOT NULL auto_increment,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
+  `posx` int(11) NOT NULL,
+  `posy` int(11) NOT NULL,
+  `world` varchar(25) NOT NULL,
   PRIMARY KEY  (`ID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
+--
+-- Table structure for table `world`
+--
+
+DROP TABLE IF EXISTS `world`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `world` (
+  `id` int(11) NOT NULL auto_increment,
+  `posx` int(11) NOT NULL,
+  `posy` int(11) NOT NULL,
+  `tile` int(11) NOT NULL,
+  `clip` int(11) NOT NULL,
+  `world` varchar(25) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+SET character_set_client = @saved_cs_client;
+
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -81,4 +103,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-01-08  0:35:50
+-- Dump completed on 2011-01-08  8:33:03
