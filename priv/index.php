@@ -9,6 +9,7 @@
 
         function updatefeed(){
             $('#livefeed').load('api/index.php?action=live');
+            $('#worldview').load('api/index.php?action=worldview');
         }
     </script>
 </head>
@@ -21,7 +22,7 @@ $username = $napalmauth->user_name();
 
 <?php
 echo("<p>Hi $username!<p/>");
-echo("<p><a href='index.php'>Dashboard</a></p>");
+echo("<p><a href='index.php'>Dashboard</a> <a href='index.php?action=world'>World</a></p>");
 $napalmauth->show_logout();
 ?>
 <hr/>

@@ -9,6 +9,9 @@ switch($action){
     case "live":
         include("engine/live.php");
         break;
+    case "worldview":
+        include("engine/worldview.php");
+        break;
     default:
         echo("Apiloginok\n");
 }

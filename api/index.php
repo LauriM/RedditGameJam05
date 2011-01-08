@@ -17,8 +17,8 @@ if($api_enable == false){
 
 $napalmauth->user_process();
 $status = $napalmauth->user_process();
+$username = $napalmauth->user_name();
 
-echo $status;
 if($status !== 1){
     $status = $napalmauth->api_auth();
 }
