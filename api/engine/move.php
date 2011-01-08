@@ -38,21 +38,21 @@ switch("$dir"){
 
 if($x < 0){
     $x = 0;
-    query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Clip alert!','$time')");
+    query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Can\'t move there!','$time')");
 }
 if($y < 0){
     $y = 0;
-    query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Clip alert!','$time')");
+    query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Can\'t move there!','$time')");
 }
 
 if($x > $world_width){
     $y = $world_width;
-    query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Clip alert!','$time')");
+    query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Can\'t move there!','$time')");
 }
 
 if($y > $world_height){
     $y = $world_height;
-    query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Clip alert!','$time')");
+    query("INSERT INTO feed(target,owner,message,unixtime) VALUES('<$username>','system','Can\'t move there!','$time')");
 }
 
 $result = query("SELECT * FROM world WHERE world = '$user_world' AND posx = '$x' AND posy='$y' AND clip='1'");
