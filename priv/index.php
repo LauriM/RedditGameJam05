@@ -33,6 +33,15 @@
             $('#editorclipoff').click(function(){
                 $.get('api/index.php?action=editor', {cmd: "clipoff"} )
             });
+
+            <?php
+                $tile_count = 3;
+                for($i = 0;$i < $tile_count;$i++){
+                    echo("$('#editortile$i').click(function(){");
+                        echo("$.get('api/index.php?action=editor', {cmd: 'tile', id: '$i'} )");
+                    echo("});");
+                }
+            ?>
         });
 
         function updatefeed(){

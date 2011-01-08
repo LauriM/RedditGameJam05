@@ -62,6 +62,11 @@ if($editor == 1){
 <div class="editor">
     <p><a id="editorclipon">Clip on<a/></p>
     <p><a id="editorclipoff">Clip off<a/></p>
+    <?php
+        for($i = 0;$i < $tile_count;$i++){
+            echo("<p a id='editortile$i'><img src='img/tile/tile$i.bmp'/></p>");
+        }
+    ?>
 </div>
 <?php
 }
