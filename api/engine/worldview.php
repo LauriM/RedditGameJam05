@@ -48,6 +48,7 @@ echo("<div class='scoreboard'>");
     echo("<p><a href='index.php?action=world&subaction=dc'>Leave game</a></p>");
 echo("</div>");
 
+echo("<div class='map'>");
 echo("<table border='1'>");
 for($y = 0;$y < $world_width;$y++){
     echo("<tr>");
@@ -102,6 +103,7 @@ for($y = 0;$y < $world_width;$y++){
     echo("</tr>");
 }
 echo("</table>");
+echo("</div>");
 
 echo("<p><b>Points: $user_points</b></p>");
 echo("<hr>");
