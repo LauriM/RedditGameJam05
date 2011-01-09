@@ -10,18 +10,17 @@ $result = query("SELECT * FROM users WHERE username = '$username'");
 $count  = mysql_num_rows($result);
 
 if($count == 1){
-    $user_x     = mysql_result($result,0,"posx");
-    $user_y     = mysql_result($result,0,"posy");
-    $user_world = mysql_result($result,0,"world");
+    $user_x      = mysql_result($result,0,"posx");
+    $user_y      = mysql_result($result,0,"posy");
+    $user_world  = mysql_result($result,0,"world");
+    $user_points = mysql_result($result,0,"points");
 }else{
     die("Error on user profile!");
 }
 
 if($user_world == ""){
-    include("serverbrowser.php");
-    die();
+    echo("Woops... Technical problem! <a href='index.php?action=world'>Reload</a>)");
 }
-
 //UPDATE THE OBJECTS AND GAMESTATE
 //needs $user_world to work so not on top of the file
 include("gamestate.php");
@@ -94,8 +93,7 @@ for($y = 0;$y < $world_width;$y++){
 }
 echo("</table>");
 
-$points = $napalmdata->getdata($username,"points");
-echo("<p><b>Points: $points</b></p>");
+echo("<p><b>Points: $user_points</b></p>");
 echo("<hr>");
 
 $result = query("SELECT * FROM feed WHERE target = '<$username>' OR target = '[global]' OR target = '\{$user_world\}'");

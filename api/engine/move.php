@@ -81,8 +81,7 @@ if($moved == true){
         query("DELETE FROM objects WHERE posx = '$x' AND posy = '$y' AND world = '$user_world'"); 
         query("INSERT INTO feed(target,owner,message,unixtime) VALUES('\{$user_world\}','system','$username found heart! +1','$time')");
 
-        $points = $napalmdata->getdata($username,"points");
-        $napalmdata->setdata($username,"points",$points+1);
+        query("UPDATE users SET points = points + 1 WHERE username = '$username'");
     }
 }
 

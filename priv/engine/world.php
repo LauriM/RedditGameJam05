@@ -19,6 +19,19 @@ if($subaction == "dc"){
     $user_world = "";
 }
 
+if($subaction == "join"){
+    $name = secure($_GET['name']);
+
+    $result = query("SELECT * FROM worlds WHERE name = '$name'");
+
+    if(mysql_num_rows($result) == 1){
+        query("UPDATE users SET world = '$name' WHERE username = '$username'");
+        $user_world = $name;
+    }else{
+        echo("Invalid world!");
+    }
+}
+
 if($user_world == ""){
     include("priv/serverbrowser.php");
     die();
