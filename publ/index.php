@@ -1,5 +1,18 @@
-<h1>RedditGameJam05 game that is somehow related to love!</h1>
+<html>
+<head>
+    <title>Rush for the hearts!</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
 
+<h1>Rush for the hearts!</h1>
+
+<p>This is my entry to the RedditGameJam05!</p>
+
+<p>It may not have the best gameplay because of the technical problems (ajax is not good for realtime games), but atleast I made game under 48 hours :P</p>
+
+<p>Source code is avaivable on the <a href='https://github.com/k00pa/RedditGameJam05'>Github reporisitory</a></p>
 <?php
 switch($status){
     case 2:
@@ -44,3 +57,8 @@ if($hide == false){
 }
 
 ?>
+
+<p>Register only asks for username and password! Nothing else is asked.</p>
+
+</div>
+</html>

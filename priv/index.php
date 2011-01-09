@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>RedditGameJam05 game that is somehow related to love!</title>
+    <title>Rush for the hearts!</title>
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript">
@@ -56,11 +56,11 @@
 $status = $napalmauth->user_auth_status();
 $username = $napalmauth->user_name();
 ?>
-<h1>RedditGamJam05 game that is somehow related to love!</h1>
+<p>Rush for the hearts!</p>
 
 <?php
 echo("<p>Hi $username!<p/>");
-echo("<p><a href='index.php'>Dashboard</a> <a href='index.php?action=world'>World</a></p>");
+echo("<p><a href='index.php'>HEEELP!</a> <a href='index.php?action=world'>Play now!</a></p>");
 $napalmauth->show_logout();
 ?>
 <hr/>
