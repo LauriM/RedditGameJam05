@@ -3,6 +3,9 @@
 $world_width = 10;
 $world_height = 10;
 
+$time = time();
+
+$result = query("UPDATE users SET lasthit = '$time' WHERE username = '$username'");//update activity
 $result = query("SELECT * FROM users WHERE username = '$username'");
 $count  = mysql_num_rows($result);
 
