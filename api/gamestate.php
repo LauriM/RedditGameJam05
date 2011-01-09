@@ -16,7 +16,8 @@ if($nextround < time()){
     }
 
     $time = $time + 120;
-    if($winner_points <> 0){
+
+    if($winner_points <> 0 OR $world_nextround < $time - 240){
         query("UPDATE worlds SET nextround = '$time' WHERE name = '$user_world'");
         query("UPDATE users SET points = '0' WHERE world = '$user_world'");
         query("INSERT INTO feed(target,owner,message,unixtime) VALUES('\{$user_world\}','system','$winner_name won with $winner_points points!','$time')");
