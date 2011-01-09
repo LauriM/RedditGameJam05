@@ -84,7 +84,7 @@ $points = $napalmdata->getdata($username,"points");
 echo("<p><b>Points: $points</b></p>");
 echo("<hr>");
 
-$result = query("SELECT * FROM feed WHERE target = '<$username>' OR target = '[global]'");
+$result = query("SELECT * FROM feed WHERE target = '<$username>' OR target = '[global]' OR target = '\{$user_world\}'");
 $count  = mysql_num_rows($result);
 
 $limit = $count - 10;
@@ -92,7 +92,7 @@ if($limit < 0){
     $limit = 0;
 }
 
-$result = query("SELECT * FROM feed WHERE target = '<$username>' OR target = '[global]' LIMIT $limit,10");
+$result = query("SELECT * FROM feed WHERE target = '<$username>' OR target = '[global]' OR target = '\{$user_world\}' LIMIT $limit,10");
 $count  = mysql_num_rows($result);
 
 

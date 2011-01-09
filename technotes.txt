@@ -3,7 +3,7 @@
 #feed
 
 -target
-|-> Target of the message, example <username> is for one user. [global] for global message etc. {arealocationblingblingorsomethingidkifIevenusethistag}
+|-> Target of the message, example <username> is for one user. [global] for global message etc. {world}
 -message
 |-> the message? 
 -owner

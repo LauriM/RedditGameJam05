@@ -78,7 +78,8 @@ if($moved == true){
     $count  = mysql_num_rows($result);
 
     if($count > 0){
-        query("DELETE FROM objects WHERE posx = '$x' AND posy = '$y' AND world = '$user_world'",1); 
+        query("DELETE FROM objects WHERE posx = '$x' AND posy = '$y' AND world = '$user_world'"); 
+        query("INSERT INTO feed(target,owner,message,unixtime) VALUES('\{$user_world\}','system','$username found heart! +1','$time')");
 
         $points = $napalmdata->getdata($username,"points");
         $napalmdata->setdata($username,"points",$points+1);
