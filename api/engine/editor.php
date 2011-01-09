@@ -27,7 +27,21 @@ if($auth == 1){
 
             $result = query("SELECT * FROM world WHERE world = '$user_world' AND posx = '$user_x' AND posy = '$user_y'");
             if(mysql_num_rows($result) == 1){
-                query("UPDATE world SET tile = $id WHERE world = '$user_world' AND posx = '$user_x' AND posy = '$user_y'",1);
+                switch($id){
+                    case "0":
+                        $clip = 0;
+                        break;
+                    case "1":
+                        $clip = 0;
+                        break;
+                    case "2":
+                        $clip = 1;
+                        break;
+                    default:
+                        $clip = 0;
+                        break;
+                }
+                query("UPDATE world SET tile = $id, clip = $clip WHERE world = '$user_world' AND posx = '$user_x' AND posy = '$user_y'",1);
             }else{
                 query("INSERT INTO world(tile,world,posx,posy) VALUES('$id','$user_world','$user_x','$user_y')");
             }
