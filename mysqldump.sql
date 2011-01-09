@@ -36,7 +36,7 @@ CREATE TABLE `data` (
   `variable` varchar(50) NOT NULL,
   `value` varchar(500) NOT NULL,
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -53,8 +53,11 @@ CREATE TABLE `feed` (
   `message` varchar(250) NOT NULL,
   `unixtime` int(11) NOT NULL,
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=259 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=327 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
+
+/*!40000 ALTER TABLE `feed` DISABLE KEYS */;
+/*!40000 ALTER TABLE `feed` ENABLE KEYS */;
 
 --
 -- Table structure for table `objects`
@@ -70,7 +73,7 @@ CREATE TABLE `objects` (
   `posy` int(11) NOT NULL,
   `type` varchar(25) NOT NULL,
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=128 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -88,7 +91,7 @@ CREATE TABLE `users` (
   `posy` int(11) NOT NULL,
   `world` varchar(25) NOT NULL,
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -109,6 +112,23 @@ CREATE TABLE `world` (
 ) ENGINE=MyISAM AUTO_INCREMENT=105 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
+--
+-- Table structure for table `worlds`
+--
+
+DROP TABLE IF EXISTS `worlds`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `worlds` (
+  `ID` int(11) NOT NULL auto_increment,
+  `name` varchar(25) NOT NULL,
+  `desc` varchar(150) NOT NULL,
+  `map` varchar(25) NOT NULL,
+  `nextround` int(11) NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+SET character_set_client = @saved_cs_client;
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -119,4 +139,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-01-08 18:27:04
+-- Dump completed on 2011-01-09 14:39:33
