@@ -1,4 +1,26 @@
 <?php
+$result = query("SELECT * FROM worlds WHERE name = '$user_world'");
+$nextround = mysql_result($result,0,"nextround");
+$world_nextround = $nextround;
+$time = time();
+
+if($nextround < time()){
+    $result = query("SELECT * FROM users WHERE world = '$user_world'");
+    $count  = mysql_num_rows($result);
+
+    for($i = 0;$i < $count;$i++){
+        if(mysql_result($result,$i,"points") > $winner_points){
+            $winner_points = mysql_result($result,$i,"points");
+            $winner_name   = mysql_result($result,$i,"username");
+        }
+    }
+
+    $time = $time + 120;
+    query("UPDATE worlds SET nextround = '$time' WHERE name = '$user_world'");
+    query("UPDATE users SET points = '0' WHERE world = '$user_world'");
+    query("INSERT INTO feed(target,owner,message,unixtime) VALUES('\{$user_world\}','system','$winner_name won with $winner_points!','$time')");
+}
+
 //spawn objects
 $result = query("SELECT * FROM objects WHERE world = '$user_world'");
 $count  = mysql_num_rows($result);

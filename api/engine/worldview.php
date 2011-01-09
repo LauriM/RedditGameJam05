@@ -34,6 +34,7 @@ $count_players  = mysql_num_rows($result_players);
 $result_objects = query("SELECT * FROM objects WHERE world = '$user_world'");
 $count_objects  = mysql_num_rows($result_objects);
 
+$diff = distanceoftimeinwords(time(),$world_nextround);
 echo("<div class='scoreboard'>");
     echo("<h3>Scoreboard</h3>");
     echo("<ul>");
@@ -43,6 +44,7 @@ echo("<div class='scoreboard'>");
        echo("<li><b>$name</b> $points</li>"); 
     }
     echo("</ul>");
+    echo("$diff");
     echo("<a href='index.php?action=world&subaction=dc'>Leave game</a>");
 echo("</div>");
 
