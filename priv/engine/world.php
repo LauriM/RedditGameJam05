@@ -12,11 +12,16 @@ if($count == 1){
     die("Userprofile duplicate id error! Contact admin");
 }
 
+$subaction = $_GET['subaction'];
+if($subaction == "dc"){
+    query("UPDATE users SET world = '' WHERE username = '$username'");
+    query("INSERT INTO feed(target,owner,message,unixtime) VALUES('\{$user_world\}','system','$username left the game!','$time')");
+    $user_world = "";
+}
+
 if($user_world == ""){
-    //no location
-    //TODO: show world select (?)
-    query("UPDATE users SET world = 'default' WHERE username = '$username'");
-    $user_world = "default";
+    include("priv/serverbrowser.php");
+    die();
 }
 ?>
 

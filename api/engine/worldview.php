@@ -17,6 +17,11 @@ if($count == 1){
     die("Error on user profile!");
 }
 
+if($user_world == ""){
+    include("serverbrowser.php");
+    die();
+}
+
 //UPDATE THE OBJECTS AND GAMESTATE
 //needs $user_world to work so not on top of the file
 include("gamestate.php");
