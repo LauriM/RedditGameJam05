@@ -20,6 +20,9 @@ if($subaction == "dc"){
 }
 
 if($subaction == "join"){
+    $time = time();
+
+    $result = query("UPDATE users SET lasthit = '$time' WHERE username = '$username'");//update activity to fix join/pingout bug
     $name = secure($_GET['name']);
 
     $result = query("SELECT * FROM worlds WHERE name = '$name'");
@@ -27,6 +30,7 @@ if($subaction == "join"){
     if(mysql_num_rows($result) == 1){
         query("UPDATE users SET world = '$name' WHERE username = '$username'");
         $user_world = $name;
+        query("INSERT INTO feed(target,owner,message,unixtime) VALUES('\{$user_world\}','system','$username joined the game!','$time')");
     }else{
         echo("Invalid world!");
     }
