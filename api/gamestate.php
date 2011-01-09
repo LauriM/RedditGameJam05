@@ -15,6 +15,7 @@ if($count == 0){
         }
     }
 }
+
 //manage players (kick disconnected)
 $time = time();
 $time = $time - 15;
