@@ -9,7 +9,10 @@ if($count == 0){
     for($i = 0;$i < $spawncount;$i++){
         $x = rand(0,9);
         $y = rand(0,9);
-        query("INSERT INTO objects(world,posx,posy,type) VALUES('$user_world','$x','$y','1')");
+        $result2 = query("SELECT * FROM world WHERE world = '$user_world' AND posx = '$x' AND posy = '$y' AND clip = '1'");
+        if(mysql_num_rows($result2) == 0){//dont spawn on clip tile
+            query("INSERT INTO objects(world,posx,posy,type) VALUES('$user_world','$x','$y','1')");
+        }
     }
 }
 //manage players (kick disconnected)

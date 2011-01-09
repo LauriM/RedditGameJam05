@@ -18,3 +18,8 @@ img{
 .editor{
     float: right;
 }
+
+.scoreboard{
+    float: right;
+    padding-right: 45px;
+}

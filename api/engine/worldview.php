@@ -30,6 +30,11 @@ $count_players  = mysql_num_rows($result_players);
 $result_objects = query("SELECT * FROM objects WHERE world = '$user_world'");
 $count_objects  = mysql_num_rows($result_objects);
 
+echo("<div class='scoreboard'>");
+    echo("<h3>Scoreboard</h3>");
+    echo("<a href='index.php?action=world&subaction=dc'>Leave game</a>");
+echo("</div>");
+
 echo("<table border='1'>");
 for($y = 0;$y < $world_width;$y++){
     echo("<tr>");
@@ -83,6 +88,7 @@ for($y = 0;$y < $world_width;$y++){
     echo("</tr>");
 }
 echo("</table>");
+
 $points = $napalmdata->getdata($username,"points");
 echo("<p><b>Points: $points</b></p>");
 echo("<hr>");
