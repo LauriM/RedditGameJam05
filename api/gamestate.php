@@ -16,9 +16,11 @@ if($nextround < time()){
     }
 
     $time = $time + 120;
-    query("UPDATE worlds SET nextround = '$time' WHERE name = '$user_world'");
-    query("UPDATE users SET points = '0' WHERE world = '$user_world'");
-    query("INSERT INTO feed(target,owner,message,unixtime) VALUES('\{$user_world\}','system','$winner_name won with $winner_points!','$time')");
+    if($winner_points <> 0){
+        query("UPDATE worlds SET nextround = '$time' WHERE name = '$user_world'");
+        query("UPDATE users SET points = '0' WHERE world = '$user_world'");
+        query("INSERT INTO feed(target,owner,message,unixtime) VALUES('\{$user_world\}','system','$winner_name won with $winner_points points!','$time')");
+    }
 }
 
 //spawn objects
