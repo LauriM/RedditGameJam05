@@ -49,26 +49,26 @@ if($user_world == ""){
         <td>
         </td>
         <td>
-            <a id="moven">N</a>
+            <div id="moven"><img src='img/arrow_up.bmp'/></div>
         </td>
         <td>
         </td>
     </tr>
     <tr>
         <td>
-            <a id="movew">w</a>
+            <div id="movew"><img src='img/arrow_left.bmp'/></div>
         </td>
         <td>
         </td>
         <td>
-            <a id="movee">e</a>
+            <div id="movee"><img src='img/arrow_right.bmp'/></div>
         </td>
     </tr>
     <tr>
         <td>
         </td>
         <td>
-            <a id="moves">s</a>
+            <div id="moves"><img src='img/arrow_down.bmp'/></div>
         </td>
         <td>
         </td>

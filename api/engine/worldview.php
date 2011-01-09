@@ -45,7 +45,7 @@ echo("<div class='scoreboard'>");
     }
     echo("</ul>");
     echo("$diff");
-    echo("<a href='index.php?action=world&subaction=dc'>Leave game</a>");
+    echo("<p><a href='index.php?action=world&subaction=dc'>Leave game</a></p>");
 echo("</div>");
 
 echo("<table border='1'>");
@@ -90,7 +90,7 @@ for($y = 0;$y < $world_width;$y++){
                 if($x == mysql_result($result_players,$i,"posx") AND $y == mysql_result($result_players,$i,"posy")){
                     $player_name = mysql_result($result_players,$i,"username");
                     if($tilefull == false){
-                        echo("<img src='img/tile/tile0.bmp' alt='$player_name'/>");
+                        echo("<img src='img/enemy.bmp' alt='$player_name'/>");
                         $tilefull = true;
                     }
                 }
