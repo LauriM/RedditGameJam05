@@ -18,11 +18,7 @@
 --
 -- Current Database: `reddit`
 --
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `reddit` /*!40100 DEFAULT CHARACTER SET latin1 */;
-
-USE `reddit`;
-
+-- create it or something like that
 --
 -- Table structure for table `data`
 --
@@ -36,7 +32,7 @@ CREATE TABLE `data` (
   `variable` varchar(50) NOT NULL,
   `value` varchar(500) NOT NULL,
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -53,11 +49,8 @@ CREATE TABLE `feed` (
   `message` varchar(250) NOT NULL,
   `unixtime` int(11) NOT NULL,
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=327 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=732 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
-
-/*!40000 ALTER TABLE `feed` DISABLE KEYS */;
-/*!40000 ALTER TABLE `feed` ENABLE KEYS */;
 
 --
 -- Table structure for table `objects`
@@ -73,7 +66,7 @@ CREATE TABLE `objects` (
   `posy` int(11) NOT NULL,
   `type` varchar(25) NOT NULL,
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=128 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=320 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -90,8 +83,10 @@ CREATE TABLE `users` (
   `posx` int(11) NOT NULL,
   `posy` int(11) NOT NULL,
   `world` varchar(25) NOT NULL,
+  `lasthit` int(11) NOT NULL,
+  `points` int(11) NOT NULL,
   PRIMARY KEY  (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -123,7 +118,6 @@ CREATE TABLE `worlds` (
   `ID` int(11) NOT NULL auto_increment,
   `name` varchar(25) NOT NULL,
   `desc` varchar(150) NOT NULL,
-  `map` varchar(25) NOT NULL,
   `nextround` int(11) NOT NULL,
   PRIMARY KEY  (`ID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
@@ -139,4 +133,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-01-09 14:39:33
+-- Dump completed on 2011-01-09 16:06:59

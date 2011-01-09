@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>RedditGamJam05 game that is somehow related to love!</title>
+    <title>RedditGameJam05 game that is somehow related to love!</title>
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript">
