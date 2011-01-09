@@ -4,6 +4,20 @@
 # RedditGameJam05 Entry #
 #########################
 
-# ABOUT NapalmAuth and NapalmData
+# About NapalmAuth and NapalmData
 
 NapalmAuth and NapalmData are both experimental beta versions of the upcoming libraries. Just using it as the base of this project, full framework with documentation coming in future.
+
+# About the game
+
+My entry to RedditGameJam05. The actual project didn't go so well, as the result is bit laggy. However, I did get the game done in time and I fixed some bugs on the framework.
+
+# Install the game
+
+If you want to run the game on your own server (O_o) Or if you want to develop it. You should copy the game to your public www folder, setup the config.php and database. Use database dump to create database.
+
+Then you need to create world and edit the tiles. First one row to worlds table. Just add name and desc, nextround fixes itself when you play.
+
+After that create account to edit tiles. Add row to data table where "owner" is the username "variable" is editor and "value" is 1. This enables noclip to this account and displays the world editor buttons.
+
+Now join to the worlds and paint the tiles in. Then you are ready to go.
