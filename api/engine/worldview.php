@@ -63,6 +63,10 @@ for($y = 0;$y < $world_width;$y++){
                 }
             }
 
+            if($hit == false){
+                echo("<td background='img/tile/tile0.bmp' width='21' height='21'>"); 
+            }
+
             $tilefull = false;
             if($x == $user_x AND $y == $user_y){
                 $tilefull = 1;
@@ -92,9 +96,6 @@ for($y = 0;$y < $world_width;$y++){
                 }
             }
 
-            if($hit == false){
-                echo("<img src='img/tile/tile0.bmp'/>"); 
-            }
 
         echo("</td>");
     }

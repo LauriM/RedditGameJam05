@@ -5,7 +5,7 @@
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            dump = setInterval("updatefeed()",1000);
+            dump = setInterval("updatefeed()",3000);
 
             $('#movew').click(function(){
                 $.get('api/index.php?action=move', {dir: "w"} )
