@@ -36,6 +36,13 @@ $count_objects  = mysql_num_rows($result_objects);
 
 echo("<div class='scoreboard'>");
     echo("<h3>Scoreboard</h3>");
+    echo("<ul>");
+    for($i = 0;$i < $count_players;$i++){
+        $name   = mysql_result($result_players,$i,"username");
+        $points = mysql_result($result_players,$i,"points");
+       echo("<li><b>$name</b> $points</li>"); 
+    }
+    echo("</ul>");
     echo("<a href='index.php?action=world&subaction=dc'>Leave game</a>");
 echo("</div>");
 
